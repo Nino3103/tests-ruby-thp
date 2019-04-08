@@ -17,6 +17,7 @@ end
 
 
 p who_is_bigger(98, 120, 22,33,55,78,100)
+p who_is_bigger(nil, 3, 23)
 
 
 def reverse_upcase_noLTA(string)
@@ -36,7 +37,7 @@ def magic_array(array)
   array.flatten.sort.map{ |e| e *2}.reject{|x| x%3 == 0}.uniq.sort
 end
 
-print magic_array([[32, 54], [48, 12], [21, [1, 2, [3]]], 7, 8])
+
 # describe 'crazy stuff on arrays' do
 #   # The magic_array function takes an array of number or an array of
 #   # array of number as parameter and return the same array :
