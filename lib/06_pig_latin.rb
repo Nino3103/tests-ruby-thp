@@ -26,11 +26,11 @@ def single(element)
   end
 end
 
-  def consonant(element)
-  	if element.match(/[qu]/)
+def qu(element)
+  	if element[0.. 1].match(/[qu]/) || element[1.. 2].match(/[qu]/)
   		return element[(element.size/2).. element.size] + element[0.. (element.size/2)-1] + "ay"
   	end
-  end
+end
 
   return consonant("square")
 

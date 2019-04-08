@@ -1,6 +1,4 @@
 
-def simon_says(function)
-
   def echo(word)
       return word
   end
@@ -17,35 +15,51 @@ echo("hello")
 ######
 
   def repeat(word, number =2)
-    return (word + " ") * number
-  end
+    phrase = (word + " ") * number
+    phrase.delete_suffix!(" ")
+    p phrase
 
-p repeat("DAI",3)
-p repeat("DAI")
+  end
 
 ######
 
 
-  def start_of_word
-
+  def start_of_word(word, number)
+    return word[0..(number-1)]
+    puts word[0..(number-1)]
   end
+
+p  start_of_word("Yo momma",2)
+
+######
+
+
+  def first_word(word)
+    return word.scan(/\w+/)[0]
+  end
+
+p first_word("Hello World")
+p first_word("oh dear")
 
 
 ######
 
 
-  def first_word
-
+def titleize(element)
+  n = element.split.map(&:capitalize).join(' ')
+  if n.match(/[And]/)
+    n.sub!("And", "and")
   end
 
-
-######
-
-
-  def titleize
-
+  if n.match(/[Or]/)
+    n.sub!("Or", "or")
   end
+
+  if n.match(/[The]/)
+    n.sub!("The", "the")
+  end
+
 
 end
 
-simon_says(echo("hello bitchies"))
+puts titleize("And the big wesh or and the ahaha ololo")
